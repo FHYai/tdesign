@@ -1,0 +1,56 @@
+@n: 120; // 类名中的数字变量
+
+.set-measurement(@class-prefix, @index, @property) when (@index <= @n) {
+  @class-name: ~"@{class-prefix}@{index}"; // 构建类名
+
+  .@{class-name} {
+    @multiplier: @index;
+
+    & when (@property = 'margin-left') {
+      margin-left: 2px * @multiplier;
+    }
+    & when (@property = 'margin-right') {
+      margin-right: 2px * @multiplier;
+    }
+    & when (@property = 'margin-top') {
+      margin-top: 2px * @multiplier;
+    }
+    & when (@property = 'margin-bottom') {
+      margin-bottom: 2px * @multiplier;
+    }
+    & when (@property = 'margin') {
+      margin: 2px * @multiplier;
+    }
+    & when (@property = 'padding-top') {
+      padding-top: 2px * @multiplier;
+    }
+    & when (@property = 'padding-bottom') {
+      padding-bottom: 2px * @multiplier;
+    }
+    & when (@property = 'padding-left') {
+      padding-left: 2px * @multiplier;
+    }
+    & when (@property = 'padding-right') {
+      padding-right: 2px * @multiplier;
+    }
+    & when (@property = 'padding') {
+      margin: 2px * @multiplier;
+    }
+  }
+
+  .set-measurement(@class-prefix, @index + 1, @property); // 递归调用
+}
+
+.set-measurement("ml-", 1, 'margin-left');
+.set-measurement("mr-", 1, 'margin-right');
+.set-measurement("mt-", 1, 'margin-top');
+.set-measurement("mb-", 1, 'margin-bottom');
+.set-measurement("m-", 1, 'margin');
+.set-measurement("pl-", 1, 'padding-left');
+.set-measurement("pr-", 1, 'padding-right');
+.set-measurement("pt-", 1, 'padding-top');
+.set-measurement("pb-", 1, 'padding-bottom');
+.set-measurement("p-", 1, 'padding');
+
+
+

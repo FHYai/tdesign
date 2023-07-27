@@ -1,0 +1,133 @@
+@max: 100; // 类名中的数字变量
+.set-measurement(@index) when (@index <= @max) {
+
+  .ml-@{index} {
+    margin-left: unit(@index, px);
+  }
+
+  .mr-@{index} {
+    margin-right: unit(@index, px);
+  }
+
+  .mt-@{index} {
+    margin-top: unit(@index, px);
+  }
+
+  .mb-@{index} {
+    margin-bottom: unit(@index, px);
+  }
+
+  .mv-@{index} {
+    margin-top: unit(@index, px);
+    margin-bottom: unit(@index, px);
+  }
+
+  .mh-@{index} {
+    margin-left: unit(@index, px);
+    margin-right: unit(@index, px);
+  }
+
+  .m-@{index} {
+    margin: unit(@index, px);
+  }
+
+  .pl-@{index} {
+    padding-left: unit(@index, px);
+  }
+
+  .pr-@{index} {
+    padding-right: unit(@index, px);
+  }
+
+  .pt-@{index} {
+    padding-top: unit(@index, px);
+  }
+
+  .pb-@{index} {
+    padding-bottom: unit(@index, px);
+  }
+
+  .pv-@{index} {
+    padding-top: unit(@index, px);
+    padding-bottom: unit(@index, px);
+  }
+
+  .ph-@{index} {
+    padding-left: unit(@index, px);
+    padding-right: unit(@index, px);
+  }
+
+  .p-@{index} {
+    padding: unit(@index, px);
+  }
+
+  .set-measurement((@index + 2)); // 递归调用
+}
+
+.set-measurement(2);
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.fw {
+  flex-wrap: wrap;
+}
+
+.f1 {
+  flex: 1;
+}
+
+.f2 {
+  flex: 2;
+}
+
+.jcc {
+  justify-content: center;
+}
+
+.jce {
+  justify-content: flex-end;
+}
+
+.jcsb {
+  justify-content: space-between;
+}
+
+.jcse {
+  justify-content: space-evenly;
+}
+
+.jcsa {
+  justify-content: space-around;
+}
+
+.aic {
+  align-items: center;
+}
+
+.aie {
+  align-items: end;
+}
+
+.brand-color {
+  color: var(--td-brand-color);
+}
+
+.warning-color {
+  color: var(--td-warning-color);
+}
+
+.error-color {
+  color: var(--td-error-color);
+}
+
+.success-color {
+  color: var(--td-success-color);
+}
+
