@@ -72,7 +72,7 @@ watch(
   },
 );
 
-const onSubmit = ({ validateResult }) => {
+const onSubmit = ({ validateResult }: { validateResult: any }) => {
   if (validateResult === true) {
     lockStore.setLockInfo({
       isLock: true,

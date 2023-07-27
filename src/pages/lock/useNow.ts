@@ -4,7 +4,7 @@ import { reactive, toRefs } from 'vue';
 import { dateUtil } from '@/utils/dateUtil';
 
 export function useNow(immediate = true) {
-  let timer;
+  let timer: any;
 
   const state = reactive({
     year: 0,
